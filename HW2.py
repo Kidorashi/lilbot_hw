@@ -23,6 +23,7 @@ def send_help(message): bot.send_message(message.chat.id, "Протягиваю 
 def send_len(message):
     count=message.text
     count=re.sub('[.,:;/\|{}@^!?<>-_*]+', '', count)
+    count=re.sub('[1234567890]+', '', count)
     count=re.findall(r'\w+', count)
     n=len(count)
     reply = str(n) + '. Именно столько слов я насчитал в вашем сообщении.'
